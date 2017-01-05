@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Convo</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet/less" type="text/css" href="app.less" />
+</head>
+<body>
+	<div class="app" ng-controller="CountCtrl">
+	    <!-- <counter count="vm.count"></counter> -->
+	    <div class="convo">
+			<div class="preview">
+				<h1>Convo</h1>
+				<div class="bubble"></div>
+			</div>
+			<div class="sidebar">
+			
+				<input type="text" ng-model="textToSay" ng-change="textUpdate();">
+			</div>
+	    </div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js"></script>
+	<script src="http://code.angularjs.org/1.5.0/angular.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	
+	<script src="app.js"></script>
+</body>
+</html>
