@@ -10,72 +10,42 @@ angular
     //build an array of words
     // $scope.buffer = "";
 
+    $scope.messages = [
+      "Hey Assistant how is the weather?",
+      // "The Weather is great",
+      // "What else?",
+      // "How does this text look to you?",
+    ]
+
     $scope.wordCount = 0;
-    // setInterval(function(){ textUpdate() }, 1000);
 
-  //   $scope.$watch(angular.bind($scope, function () {
-  //   return $scope.title; // `$scope` IS the `$scope` above!!
-  // }), function (newVal, oldVal) {
-  //   // now we will pickup changes to newVal and oldVal
-  // });
-    $scope.textUpdate = function() {
-      //check if last character was space
-      $scope.buffer = $scope.textToSay.split(" ");
-      console.log("buffer", $scope.buffer);
-      // console.log("last",buffer[buffer.length-1]);
+    $scope.StartConvo = function() {
 
-      // var lastChar = textToSay.substr(textToSay.length - 1);
-      // if(lastChar == " ") {
-      //   console.log("spppaceee");
-      //   $scope.displayHtml += " "+buffer.pop();
-      // }
-        // if (buffer.length > $scope.wordCount) {
-      // $timeout(function() {poll(param1, param2)}, polling_interval); 
-        // }
-      for (var i = 0; i < $scope.buffer.length; i++) {
-          // $timeout(function() {console.log(i);
+      angular.forEach($scope.messages, function(msg, key) {
+        console.log("hsfsfsf"+msg+key);
+        var sentenceBufferArray = msg.split(" ");
 
-          //   doThing(i);
-          // }, 300*(i+1)); 
-          doDelayedThing(i);
+        for (var i = 0; i < sentenceBufferArray.length; i++) {
+            AnimateInSentence(i,sentenceBufferArray);
+        }
 
-        // $timeout(function(i){
-        //   // $scope.val = true
-        //   console.log($scope.buffer[i]);
-        //   $scope.displayHtml += "<span>" + $scope.buffer[i]+" <span>";
-        //   console.log('fff');
-        //   $scope.displayHtmlSafe = $sce.trustAsHtml($scope.displayHtml);
-        // }, 500*(i+1));  
-        
-      }
+   
 
+        $scope.wordCount = sentenceBufferArray.length;
 
-      function doDelayedThing(i) {
-        return $timeout(function(){ //Return promise if needed
-           //Access params here from the outer closure of the function.
-          // console.log(i+"dela");
-          // $scope.displayHtml += "<span>" + $scope.buffer[i]+" </span>";
-
-          $( ".bubble" ).append( "<span>" + $scope.buffer[i]+" </span>" );
-          // $scope.displayHtmlSafe = $sce.trustAsHtml($scope.displayHtml);
-         }, 260*(i+1)); 
-      }
-
-      // function doThing(idx) {
-      //     console.log("hey"+idx);
-      //     console.log("dddddd", $scope.buffer);
-      //     console.log($scope.buffer[idx*1]);
-         
-      // }
-
-
-      // $scope.displayHtmlSafe = $sce.trustAsHtml($scope.displayHtml);
-
-      $scope.wordCount = $scope.buffer.length;
+      });
     }
 
-    // $interval(this.textUpdate, 1000);
-    // textUpdate();
+
+
+
+    function AnimateInSentence(i,sentenceBufferArray) {
+      console.log('go1');
+      return $timeout(function(){ //Return promise if needed
+        $( ".bubble" ).append( "<span>" + sentenceBufferArray[i]+" </span>" );
+        console.log('go');
+       }, 260*(i+1)); 
+    }
 
 	})
 	.component('counter', {

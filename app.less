@@ -25,13 +25,26 @@ body, html {
   position: relative;
 
 }
+
+.device {
+  width:540px;
+  height: 960px;
+  margin: auto;
+  // flex: 1;
+  border: 1px solid #CCC;
+  position: relative;
+  box-shadow: 0px 10px 16px -15px rgba(0,0,0,0.75);
+  padding: 30px;
+  box-sizing: border-box;
+}
+
 .bubble {
 	background-color: #f3f3f3;
 	border-radius: 9px;
 	padding: 7px 15px;
 	width: auto;
 	position: absolute;
-	right: 0;
+	right: 20px;
 	span {
 		  /* this section calls the dropHeader animation we defined above */
 		  animation-name: fadeOn;
