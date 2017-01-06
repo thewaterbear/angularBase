@@ -1,51 +1,15 @@
 angular
-	.module('Todo', [])
-	.controller('CountCtrl', function CountCtrl($scope, $interval, $sce, $timeout) {
-    console.log("dsdsdd");
+	.module('app', [])
+	.controller('CountCtrl', function CountCtrl($scope) {
+
 	  $scope.count = 4;
-    $scope.displayHtml = "";
-    $scope.textToSay="hey i'm a test setence";
-    $scope.buffer = [];
-    
-    //build an array of words
-    // $scope.buffer = "";
+    $scope.doSomething = function() {
+      console.log("Heyooo, whats the count", $scope.count);
+    }
 
-    $scope.messages = [
-      "Hey Assistant how is the weather?",
-      // "The Weather is great",
-      // "What else?",
-      // "How does this text look to you?",
-    ]
-
-    $scope.wordCount = 0;
-
-    $scope.StartConvo = function() {
-
-      angular.forEach($scope.messages, function(msg, key) {
-        console.log("hsfsfsf"+msg+key);
-        var sentenceBufferArray = msg.split(" ");
-
-        for (var i = 0; i < sentenceBufferArray.length; i++) {
-            AnimateInSentence(i,sentenceBufferArray);
-        }
-
+    $scope.exampleText = "Hey i'm an example";
+    $scope.exampleArray = ["thing 1", "thing 2", "more things"];
    
-
-        $scope.wordCount = sentenceBufferArray.length;
-
-      });
-    }
-
-
-
-
-    function AnimateInSentence(i,sentenceBufferArray) {
-      console.log('go1');
-      return $timeout(function(){ //Return promise if needed
-        $( ".bubble" ).append( "<span>" + sentenceBufferArray[i]+" </span>" );
-        console.log('go');
-       }, 260*(i+1)); 
-    }
 
 	})
 	.component('counter', {
@@ -73,5 +37,5 @@ angular
     });
 
 document.addEventListener('DOMContentLoaded', function () {
-	angular.bootstrap(document, ['Todo']);
+	angular.bootstrap(document, ['app']);
 });

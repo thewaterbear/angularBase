@@ -1,34 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Convo</title>
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<title>Angular Base</title>
 	<link rel="stylesheet/less" type="text/css" href="app.less" />
 </head>
 <body>
 	<div class="app" ng-controller="CountCtrl">
-	    <!-- <counter count="vm.count"></counter> -->
-	    <div class="convo">
-			<div class="preview">
-				<h1>Convo</h1>
-				<div class="device">
-					<div class="bubble"></div>	
-				</div>
-			</div>
-			<div class="sidebar">
-				<div ng-repeat="msg in messages">
-					<input type="text" ng-model="msg" >	
-				</div>
-				
-				<button ng-click="StartConvo()">Play</button>
-			</div>
-	    </div>
+		<counter count="count"></counter>
+		
+		<button ng-click="doSomething();">Do Something</button>
+
+		<div ng-repeat="item in exampleArray">
+			<h4>{{item}}</h4>
+		</div>
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js"></script>
 	<script src="http://code.angularjs.org/1.5.0/angular.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	
 	<script src="app.js"></script>
+
 </body>
 </html>
