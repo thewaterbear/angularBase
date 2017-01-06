@@ -1,8 +1,8 @@
 angular
-	.module('app', [])
-	.controller('CountCtrl', function CountCtrl($scope) {
+  .module('app', [])
+  .controller('CountCtrl', function CountCtrl($scope) {
 
-	  $scope.count = 4;
+    $scope.count = 4;
     $scope.doSomething = function() {
       console.log("Heyooo, whats the count", $scope.count);
     }
@@ -11,8 +11,8 @@ angular
     $scope.exampleArray = ["thing 1", "thing 2", "more things"];
    
 
-	})
-	.component('counter', {
+  })
+  .component('counter', {
         bindings: {
           count: '='
         },
@@ -37,5 +37,5 @@ angular
     });
 
 document.addEventListener('DOMContentLoaded', function () {
-	angular.bootstrap(document, ['app']);
+  angular.bootstrap(document, ['app']);
 });
